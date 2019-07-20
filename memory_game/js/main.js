@@ -67,4 +67,17 @@ function flipCard() {
 	} 
 }
 
+var resetBoard = function() {
+	for (var i = 0; i < cards.length; i++) {
+		var cardElement;
+		cardElement = document.getElementsByTagName('img')[i]
+		cardElement.setAttribute('src', "images/back.png");
+	};
+	while (cardsInPlay.length > 0) {
+		cardsInPlay.pop();
+	};
+}
+
+var resetButton = document.querySelector('button');
+resetButton.addEventListener('click',resetBoard);
 createBoard();
